@@ -75,7 +75,7 @@ dcl_temps 5
 //   v6.x <- boneIndices.x; v6.y <- boneIndices.y; v6.z <- boneIndices.z; v6.w <- boneIndices.w; 
 //   o0.x <- <main return value>.x; o0.y <- <main return value>.y; o0.z <- <main return value>.z; o0.w <- <main return value>.w
 //
-#line 13 "D:\Employment_Works\Ruins of La Mer\HLSL\ShadowmapCasterVS.hlsl"
+#line 13 "C:\Users\sukai\Desktop\Ruins of La Mer\Ruins of La Mer\HLSL\ShadowmapCasterVS.hlsl"
 itof r0.xyz, l(0, 0, 0, 0)  // r0.x <- p.x; r0.y <- p.y; r0.z <- p.z
 
 #line 14

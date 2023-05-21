@@ -156,7 +156,7 @@ dcl_temps 12
 //   o1.x <- <main return value>.world_position.x; o1.y <- <main return value>.world_position.y; o1.z <- <main return value>.world_position.z; 
 //   o0.x <- <main return value>.position.x; o0.y <- <main return value>.position.y; o0.z <- <main return value>.position.z; o0.w <- <main return value>.position.w
 //
-#line 13 "D:\Employment_Works\Ruins of La Mer\HLSL\PhongVS.hlsl"
+#line 13 "C:\Users\sukai\Desktop\Ruins of La Mer\Ruins of La Mer\HLSL\PhongVS.hlsl"
 itof r0.xyz, l(0, 0, 0, 0)  // r0.x <- p.x; r0.y <- p.y; r0.z <- p.z
 
 #line 14
@@ -289,7 +289,7 @@ mov r9.z, cb3[2].z
 mov r10.z, cb3[2].w
 mov r11.xyzw, cb3[3].xyzw
 
-#line 10 "D:\Employment_Works\Ruins of La Mer\HLSL\ShadowmapFunctions.hlsli"
+#line 10 "C:\Users\sukai\Desktop\Ruins of La Mer\Ruins of La Mer\HLSL\ShadowmapFunctions.hlsli"
 itof r5.w, l(1)
 mov r7.w, r11.x
 dp4 r7.x, r5.xyzw, r7.xyzw  // r7.x <- worldViewProjectionPosition.x
@@ -314,7 +314,7 @@ add r7.xy, r6.zwzz, l(0.500000, 0.500000, 0.000000, 0.000000)  // r7.y <- worldV
 mov r7.xy, r7.xyxx  // r7.x <- <CalcShadowTexcoord return value>.x; r7.y <- <CalcShadowTexcoord return value>.y
 mov r7.z, r7.z  // r7.z <- <CalcShadowTexcoord return value>.z
 
-#line 33 "D:\Employment_Works\Ruins of La Mer\HLSL\PhongVS.hlsl"
+#line 33 "C:\Users\sukai\Desktop\Ruins of La Mer\Ruins of La Mer\HLSL\PhongVS.hlsl"
 mov r7.xyz, r7.xyzx  // r7.x <- vout.shadowTexcoord.x; r7.y <- vout.shadowTexcoord.y; r7.z <- vout.shadowTexcoord.z
 
 #line 35

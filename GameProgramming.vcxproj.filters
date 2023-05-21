@@ -258,6 +258,9 @@
     <ClInclude Include="Source\PostprocessingRenderer.h">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Graphics\Sprite_old.h">
+      <Filter>Source\Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="External\imgui\imgui.cpp">
@@ -457,6 +460,9 @@
     </ClCompile>
     <ClCompile Include="Source\PostprocessingRenderer.cpp">
       <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Sprite_old.cpp">
+      <Filter>Source\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

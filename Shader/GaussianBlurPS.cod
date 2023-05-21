@@ -56,7 +56,7 @@ dcl_temps 4
 //   v2.x <- pin.texcoord.x; v2.y <- pin.texcoord.y; 
 //   o0.x <- <main return value>.x; o0.y <- <main return value>.y; o0.z <- <main return value>.z; o0.w <- <main return value>.w
 //
-#line 8 "D:\Employment_Works\Ruins of La Mer\HLSL\GaussianBlurPS.hlsl"
+#line 8 "C:\Users\sukai\Desktop\Ruins of La Mer\Ruins of La Mer\HLSL\GaussianBlurPS.hlsl"
 itof r0.xyz, l(0, 0, 0, 0)  // r0.x <- color.x; r0.y <- color.y; r0.z <- color.z
 
 #line 9

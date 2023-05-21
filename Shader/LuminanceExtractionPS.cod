@@ -55,10 +55,10 @@ dcl_temps 2
 //   v2.x <- pin.texcoord.x; v2.y <- pin.texcoord.y; 
 //   o0.x <- <main return value>.x; o0.y <- <main return value>.y; o0.z <- <main return value>.z; o0.w <- <main return value>.w
 //
-#line 113 "D:\Employment_Works\Ruins of La Mer\HLSL\FilterFunctions.hlsli"
+#line 113 "C:\Users\sukai\Desktop\Ruins of La Mer\Ruins of La Mer\HLSL\FilterFunctions.hlsli"
 mov r0.xyz, l(0.299000,0.587000,0.114000,0)
 
-#line 8 "D:\Employment_Works\Ruins of La Mer\HLSL\LuminanceExtractionPS.hlsl"
+#line 8 "C:\Users\sukai\Desktop\Ruins of La Mer\Ruins of La Mer\HLSL\LuminanceExtractionPS.hlsl"
 sample_indexable(texture2d)(float,float,float,float) r1.xyzw, v2.xyxx, t0.xyzw, s0
 mul r1.xyzw, r1.xyzw, v1.xyzw  // r1.x <- color.x; r1.y <- color.y; r1.z <- color.z; r1.w <- color.w
 
@@ -66,10 +66,10 @@ mul r1.xyzw, r1.xyzw, v1.xyzw  // r1.x <- color.x; r1.y <- color.y; r1.z <- colo
 nop 
 mov r1.xyz, r1.xyzx
 
-#line 114 "D:\Employment_Works\Ruins of La Mer\HLSL\FilterFunctions.hlsli"
+#line 114 "C:\Users\sukai\Desktop\Ruins of La Mer\Ruins of La Mer\HLSL\FilterFunctions.hlsli"
 dp3 r0.x, r0.xyzx, r1.xyzx  // r0.x <- <RGB2Luminance return value>
 
-#line 11 "D:\Employment_Works\Ruins of La Mer\HLSL\LuminanceExtractionPS.hlsl"
+#line 11 "C:\Users\sukai\Desktop\Ruins of La Mer\Ruins of La Mer\HLSL\LuminanceExtractionPS.hlsl"
 mov r0.x, r0.x  // r0.x <- luminance
 
 #line 14

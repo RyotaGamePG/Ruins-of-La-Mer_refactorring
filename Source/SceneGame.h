@@ -153,6 +153,7 @@ private:
 	//	パノラマスカイボックス画像
 	std::unique_ptr<Texture>	skyboxTexture;
 
+
 	bool							drawDebugPrimitive;	//	デバッグプリミティブ描画
 	bool							drawLightDebugPrimitive;	//ライト	デバッグ描画
 	bool							drawPlayerDebugPrimitive;	//	プレイヤーデバッグ描画

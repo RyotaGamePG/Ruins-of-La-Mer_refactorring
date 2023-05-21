@@ -45,7 +45,7 @@ dcl_output o0.xyzw
 //   v0.x <- pin.position.x; v0.y <- pin.position.y; v0.z <- pin.position.z; v0.w <- pin.position.w; 
 //   o0.x <- <main return value>.x; o0.y <- <main return value>.y; o0.z <- <main return value>.z; o0.w <- <main return value>.w
 //
-#line 5 "D:\Employment_Works\Ruins of La Mer\HLSL\OutlinePS.hlsl"
+#line 5 "C:\Users\sukai\Desktop\Ruins of La Mer\Ruins of La Mer\HLSL\OutlinePS.hlsl"
 mov o0.xyzw, cb3[4].xyzw
 ret 
 // Approximately 2 instruction slots used

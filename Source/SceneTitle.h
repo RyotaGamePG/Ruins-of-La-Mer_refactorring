@@ -10,6 +10,8 @@
 #include "Graphics/Light.h"
 #include "Graphics/LightManager.h"
 
+#include "Graphics/Sprite_old.h"
+
 //タイトルシーン(セレクトシーンもごっちゃ)
 class SceneTitle :public Scene
 {
@@ -74,7 +76,7 @@ private:
     //Sprite* sprite = nullptr;
 
     //アップデート2023年5月15日
-    std::unique_ptr<Texture> texture;
+    //std::unique_ptr<Texture> texture;
 
     //std::unique_ptr<Texture> TitleTex;
 
@@ -112,7 +114,10 @@ private:
     std::unique_ptr<AudioSource> decision = nullptr;
 
     Light* mainDirectionalLight = nullptr;
-    std::unique_ptr<Sprite>	sprite;
+    //std::unique_ptr<Sprite>	sprite;
+
+
+    SpriteOld*  sprite_render;
 
 
 

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Graphics/Sprite.h"
+#include "Graphics/Sprite_old.h"
 #include "Scene.h"
 
 //タイトルシーン
@@ -25,5 +26,5 @@ public:
     void Render()override;
 
 private:
-    Sprite* sprite = nullptr;
+    SpriteOld* sprite = nullptr;
 };

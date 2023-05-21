@@ -9,7 +9,7 @@
 void SceneSelect::Initialize()
 {
     //スプライト初期化
-    //sprite = new Sprite("Data/Sprite/Title.png");
+    sprite = new SpriteOld("Data/Sprite/Title.png");
 }
 
 //終了化
@@ -63,10 +63,10 @@ void SceneSelect::Render()
         float textureWidth = static_cast<float>(sprite->GetTextureWidth());
         float textureHeight = static_cast<float>(sprite->GetTextureHeight());
         //タイトルスプライト描画
-        //sprite->Render(dc,
-        //    0, 0, screenWidth, screenHeight,
-        //    0, 0, textureWidth, textureHeight,
-        //    0,
-        //    1, 1, 0, 1);
+        sprite->Render(dc,
+            0, 0, screenWidth, screenHeight,
+            0, 0, textureWidth, textureHeight,
+            0,
+            1, 1, 0, 1);
     }
 }

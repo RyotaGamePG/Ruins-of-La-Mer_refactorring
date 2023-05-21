@@ -16,7 +16,10 @@ void SceneTitle::Initialize()
     //sprite = new Sprite("Data/Sprite/Title.png");
     //sprite = new Sprite("Data/Sprite/title0.png");
 
-    texture = std::make_unique<Texture>("Data/Sprite/Title.png");
+    //texture = std::make_unique<Texture>("Data/Sprite/Title.png");
+
+    sprite_render = new SpriteOld("Data/Sprite/Title.png");
+
 
 
     //テクスチャ
@@ -80,12 +83,12 @@ void SceneTitle::Initialize()
     //タイトル描画用のテクスチャ読み込み
     
     
-    sprite = std::make_unique<Sprite>();
-    sprite->SetShaderResourceView(texture->GetShaderResourceView(), texture->GetWidth(), texture->GetHeight());
+  /*  sprite = std::make_unique<Sprite>();
+    sprite->SetShaderResourceView(TitleTex->GetShaderResourceView(), TitleTex->GetWidth(), TitleTex->GetHeight());
     sprite->Update(0, 0, graphics.GetScreenWidth(), graphics.GetScreenHeight(),
-        0, 0, static_cast<float>(texture->GetWidth()), static_cast<float>(texture->GetHeight()),
+        0, 0, static_cast<float>(TitleTex->GetWidth()), static_cast<float>(TitleTex->GetHeight()),
         0,
-        1, 1, 1, 1);
+        1, 1, 1, 1);*/
 
     //決定ボタン用タイマー
     soundTime = 30.0f;
@@ -382,7 +385,7 @@ void SceneTitle::Render()
     // 描画処理
     RenderContext rc;
    // rc.lightDirection = { 0.0f, 0.0f, -1.0f, 0.0f };	// ライト方向（下方向）
-
+    rc.deviceContext = dc;
     //カメラパラメータ設定
     Camera& camera = Camera::Instance();
     rc.view = camera.GetView();
@@ -394,27 +397,30 @@ void SceneTitle::Render()
     {
         float screenWidth = static_cast<float>(graphics.GetScreenWidth());
         float screenHeight = static_cast<float>(graphics.GetScreenHeight());
-      /*  float textureWidth = static_cast<float>(sprite->GetTextureWidth());
-        float textureHeight = static_cast<float>(sprite->GetTextureHeight());*/
+        float textureWidth = static_cast<float>(sprite_render->GetTextureWidth());
+        float textureHeight = static_cast<float>(sprite_render->GetTextureHeight());
         //タイトルスプライト描画
-        //sprite->Render(dc,
-        //    0, 0, screenWidth, screenHeight,
-        //    0, 0, textureWidth, textureHeight,
-        //    0,
-        //    1, 1, 1, 1);
+        sprite_render->Render(dc,
+            0, 0, screenWidth, screenHeight,
+            0, 0, textureWidth, textureHeight,
+            0,
+            1, 1, 1, 1);
     }
 
 
     // 3Dモデル描画
     {
-        //Shader* shader = graphics.GetShader();
-        //shader->Begin(dc, rc);
-        //
-        ////backGround->Render(dc, shader);
+        ModelShader* shader = graphics.GetShader(ModelShaderId::Default);
+        shader->Begin(rc);
+        
+        //backGround->Render(dc, shader);
         //StageManager::Instance().Render(dc, shader);
-        //titleStage0->Render(dc, shader);
+        StageManager::Instance().ModelRender(rc, shader);
+        titleStage0->ModelRender(rc, shader);
 
-        //shader->End(dc);
+        shader->End(rc);
+
+        
     }
 
     float lookZ= camera.GetEye().z;
@@ -488,13 +494,13 @@ void SceneTitle::TitleRender()
 
     // 3Dモデル描画
     {
-     /*   Shader* shader = graphics.GetShader();
-        shader->Begin(dc, rc);
+        ModelShader* shader = graphics.GetShader(ModelShaderId::Default);
+        shader->Begin(rc);
 
-        titleStage0->Render(dc, shader);
+        titleStage0->ModelRender(rc, shader);
 
 
-        shader->End(dc);*/
+        shader->End(rc);
     }
 }
 
@@ -514,6 +520,7 @@ void SceneTitle::SelectRender()
 
     // 描画処理
     RenderContext rc;
+    rc.deviceContext = dc;
     //rc.lightDirection = { 0.0f, -1.0f, 0.0f, 0.0f };	// ライト方向（下方向）
 
     LightManager::Instane().PushRenderContext(rc);
@@ -525,12 +532,12 @@ void SceneTitle::SelectRender()
 
     // スカイボックスの描画
     {
-        SpriteShader* shader = graphics.GetShader(SpriteShaderId::Default);
-        shader->Begin(rc);
+        //SpriteShader* shader = graphics.GetShader(SpriteShaderId::Default);
+        //shader->Begin(rc);
 
-        shader->Draw(rc, sprite.get());
+        //shader->Draw(rc, sprite.get());
 
-        shader->End(rc);
+        //shader->End(rc);
     }
     // 3Dモデル描画
     {

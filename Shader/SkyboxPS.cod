@@ -55,7 +55,7 @@ dcl_temps 3
 //   v2.x <- pin.worldPosition.x; v2.y <- pin.worldPosition.y; v2.z <- pin.worldPosition.z; 
 //   o0.x <- <main return value>.x; o0.y <- <main return value>.y; o0.z <- <main return value>.z; o0.w <- <main return value>.w
 //
-#line 9 "D:\Employment_Works\Ruins of La Mer\HLSL\SkyboxPS.hlsl"
+#line 9 "C:\Users\sukai\Desktop\Ruins of La Mer\Ruins of La Mer\HLSL\SkyboxPS.hlsl"
 mov r0.xyz, -cb0[0].xyzx
 add r0.xyz, r0.xyzx, v2.xyzx
 dp3 r0.w, r0.xyzx, r0.xyzx
